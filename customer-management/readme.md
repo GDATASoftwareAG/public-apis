@@ -56,7 +56,7 @@ POST /licenses
 | `lastName` | string | Yes | Last name of the primary contact                                                 |
 | `phone` | string | No | Phone number of the primary contact                                              |
 | `customerReference` | string | No | An optional reference identifier for the customer                                |
-| `interactiveOnboarding` | boolean | No | Indicates whether an interactive onboarding experience on the website is desired |
+| `interactiveOnboarding` | boolean | No | Indicates whether an interactive onboarding experience in our web portal is desired |
 
 **Response:** `201 Created`
 ```json
@@ -91,7 +91,7 @@ POST /licenses
 | `partnerName` | string | Name of the partner this customer belongs to                                                                                                                                                                                                                                                |
 | `nextMilestoneName` | string | Name of the next milestone in the onboarding process, or `null` if none is set                                                                                                                                                                                                              |
 | `nextMilestoneDate` | string (datetime) | Scheduled date of the next onboarding milestone, or `null` if none is set                                                                                                                                                                                                                   |
-| `hasOnboardingReport` | boolean | Indicates whether the onboarding report is available on the website. Becomes `true` once onboarding is completed                                                                                                                                                                            |
+| `hasOnboardingReport` | boolean | Indicates whether the onboarding report is available in our web portal. Becomes `true` once an onboarding report has been generated                                                                                                                                                                            |
 
 ---
 
@@ -123,6 +123,8 @@ GET /licenses
 |-----------|------|-------------|------------------------------|
 | `filter` | string | Gridify filter expression | ``filter=status=onboarding`` |
 | `orderBy` | string | Sort order | ``orderBy=customer desc``    |
+
+For more details on the syntax, refer to the Gridify documentation on [filtering](https://alirezanet.github.io/Gridify/guide/filtering) and [ordering](https://alirezanet.github.io/Gridify/guide/ordering).
 
 **Response:** `200 OK`
 ```json
@@ -271,6 +273,8 @@ GET /endpoints
 | `filter` | string | Gridify filter expression | ``filter=tenantId=550e8400-e29b-41d4-a716-446655440000`` |
 | `orderBy` | string | Sort order | ``orderBy=computerName desc``                               |
 
+For more details on the syntax, refer to the Gridify documentation on [filtering](https://alirezanet.github.io/Gridify/guide/filtering) and [ordering](https://alirezanet.github.io/Gridify/guide/ordering).
+
 **Response:** `200 OK`
 ```json
 {
@@ -335,7 +339,7 @@ DELETE /endpoints/{id}
 
 ### Delete Onboarding
 
-Deletes the onboarding associated with the given tenant ID. Deleting an onboarding will finish it successfully and the associated license will be marked as `Active`. You can retrieve the tenant ID via `GET /licenses/{key}`. The associated endpoints will no longer be accessible via the API. Please use our website to manage endpoints after finishing the onboarding.
+Deletes the onboarding associated with the given tenant ID. Deleting an onboarding will finish it successfully and the associated license will be marked as `Active`. You can retrieve the tenant ID via `GET /licenses/{key}`. The associated endpoints will no longer be accessible via the API. Please use our web portal to manage endpoints after finishing the onboarding.
 
 [G DATA Web Portal](https://portal.gdata.de/)
 
@@ -365,7 +369,7 @@ DELETE /onboardings/{tenant-id}
 
 ## Other
 
-All other endpoints are not publicly documented and are intended for internal use only. Please use our website for any additional functionality:
+All other endpoints are not publicly documented and are intended for internal use only. Please use our web portal for any additional functionality:
 
 [G DATA Web Portal](https://portal.gdata.de/)
 
