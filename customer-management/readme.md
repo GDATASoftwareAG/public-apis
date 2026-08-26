@@ -52,8 +52,8 @@ POST /licenses
 | `customer` | string | Yes | Name of the customer this license is issued for                                  |
 | `product` | string | Yes | Product type – either `MXDR` or `XDR`                                            |
 | `email` | string | Yes | Primary contact email address                                                    |
-| `firstName` | string | Yes | First name of the primary contact                                                |
-| `lastName` | string | Yes | Last name of the primary contact                                                 |
+| `firstName` | string | No | First name of the primary contact                                                |
+| `lastName` | string | No | Last name of the primary contact                                                 |
 | `phone` | string | No | Phone number of the primary contact                                              |
 | `customerReference` | string | No | An optional reference identifier for the customer                                |
 | `interactiveOnboarding` | boolean | No | Indicates whether an interactive onboarding experience in our web portal is desired |
@@ -185,6 +185,9 @@ GET /licenses/{key}/setup-ids
 ### Add Endpoints
 
 Adds a list of endpoints. Each endpoint is initially marked as *not seen*. Already existing endpoints are ignored and will not be affected. Adding an endpoint before the installation is not required, but it allows you to mark endpoints as *critical* and *expected* in advance. This way, you can check whether all the necessary endpoints have been installed.
+
+> [!NOTE]
+> Advises about risks or negative outcomes of certain actions.
 
 ```
 POST /endpoints
