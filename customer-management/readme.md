@@ -56,7 +56,7 @@ POST /licenses
 | `lastName` | string | No | Last name of the primary contact                                                                                                                            |
 | `phone` | string | No | Phone number of the primary contact                                                                                                                         |
 | `customerReference` | string | No | An optional reference identifier for the customer                                                                                                           |
-| `interactiveOnboarding` | boolean | No | Indicates whether an interactive onboarding experience in our web portal is desired. This is required for endpoint management during the onboarding process |
+| `interactiveOnboarding` | boolean | No | Default: false. Indicates whether an interactive onboarding experience in our web portal is desired. This is required for endpoint management during the onboarding process. |
 
 **Response:** `201 Created`
 ```json
